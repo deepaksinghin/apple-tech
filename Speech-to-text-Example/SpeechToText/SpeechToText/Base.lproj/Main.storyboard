@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechToText" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-6V-wfl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mu4-XF-DmS"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5aw-oC-g3Y"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYV-bH-SGe">
+                                <rect key="frame" x="10" y="426" width="373" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dur-Aa-9T4">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pPw-6V-wfl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A74-5V-fl0"/>
+                            <constraint firstItem="tYV-bH-SGe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Bh5-HC-eEi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tYV-bH-SGe" secondAttribute="trailing" constant="10" id="Eh6-v6-WsG"/>
+                            <constraint firstItem="pPw-6V-wfl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GyJ-Iw-gQo"/>
+                            <constraint firstItem="dur-Aa-9T4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K3K-ro-aVa"/>
+                            <constraint firstItem="pPw-6V-wfl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PjH-Er-gb2"/>
+                            <constraint firstItem="pPw-6V-wfl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vhx-tC-x5n"/>
+                            <constraint firstItem="tYV-bH-SGe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m8i-LZ-C3f"/>
+                            <constraint firstItem="tYV-bH-SGe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p2t-Om-u8d"/>
+                            <constraint firstItem="dur-Aa-9T4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tFC-gs-ldL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="dur-Aa-9T4" id="UPZ-Nm-2QM"/>
+                        <outlet property="labelCurrentTranscription" destination="tYV-bH-SGe" id="Vkc-tL-Ge3"/>
+                        <outlet property="tableView" destination="pPw-6V-wfl" id="HMs-kc-0Sb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.70229007633588" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
