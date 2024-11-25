@@ -40,11 +40,14 @@ speechManager.startRecognition()
 speechManager.onTextTranscription = { text in
     print("Transcribed text: \(text)")
 }
-
+```
 
 ### Permissions
+
+```swift
 <key>NSSpeechRecognitionUsageDescription</key>
 <string>Explain here why your app needs access to speech recognition, e.g., to allow voice commands.</string>
+```
 
 ### Contributions
 Contributions are welcome. Please submit issues or pull requests on GitHub to suggest changes or enhancements.
