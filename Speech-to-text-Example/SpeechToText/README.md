@@ -1,4 +1,4 @@
-# Speech-to-Text Example
+# Speech-to-Text
 
 This directory contains the `SpeechToTextManager` class, utilizing Apple's Speech framework to recognize and transcribe spoken language in real-time. It integrates features like silence detection to manage natural speech pauses and volume monitoring to provide feedback on audio input levels.
 
@@ -51,3 +51,11 @@ speechManager.onTextTranscription = { text in
 
 ### Contributions
 Contributions are welcome. Please submit issues or pull requests on GitHub to suggest changes or enhancements.
+
+### Demo Video
+
+Watch a quick demo of the Speech-to-Text in action:
+
+[![Watch the video](https://img.youtube.com/vi/uZGZ1P5PmmM/maxresdefault.jpg)](https://youtube.com/shorts/uZGZ1P5PmmM?feature=share)
+
+

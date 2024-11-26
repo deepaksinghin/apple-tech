@@ -10,7 +10,7 @@ import Combine
 import UIKit
 
 // MARK: - Constants
-private enum SullyConstants {
+private enum LiveConstants {
     static let apiWaitTime = 3.0
     static let defaultSystemMessage = "Speech framework Demo, Test Response"
 }
@@ -19,10 +19,10 @@ enum ListeningState {
     case active
     case processing
     case inactive
-    case error(SullyError)
+    case error(AppError)
 }
 
-enum SullyError: LocalizedError {
+enum AppError: LocalizedError {
     case speechRecognitionError(Error)
     case transcriptionFailed
     case apiError(String)
@@ -47,7 +47,7 @@ class Live: ObservableObject {
     // MARK: - Published Properties
     @Published private(set) var conversations: [ChatModel] = []
     @Published private(set) var currentTranscription: String?
-    @Published private(set) var currentError: SullyError?
+    @Published private(set) var currentError: AppError?
     @Published private(set) var listeningState: ListeningState = .inactive
     
     // MARK: - Public Properties
@@ -63,7 +63,7 @@ class Live: ObservableObject {
     }
     
     deinit {
-        print("SullyLive reinitialised")
+        print("Live reinitialised")
     }
 }
 
@@ -145,7 +145,7 @@ private extension Live {
         currentError = nil
     }
     
-    private func handleError(_ error: SullyError) {
+    private func handleError(_ error: AppError) {
         currentError = error
         updateListeningState(.error(error))
     }
@@ -169,7 +169,7 @@ extension Live {
         
         do {
             // Simulate API call
-            await self.waitForSeconds(SullyConstants.apiWaitTime)
+            await self.waitForSeconds(LiveConstants.apiWaitTime)
             try await processResponse()
         } catch {
             handleError(.apiError(error.localizedDescription))
@@ -179,7 +179,7 @@ extension Live {
     private func processResponse() async throws {
         updateListeningState(.active)
         startSession()
-        addMessage(SullyConstants.defaultSystemMessage, type: .system)
+        addMessage(LiveConstants.defaultSystemMessage, type: .system)
     }
     
     private func addMessage(_ text: String, type: ChatType) {

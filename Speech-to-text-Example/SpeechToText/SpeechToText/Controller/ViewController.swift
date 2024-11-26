@@ -46,7 +46,7 @@ class ViewController: UIViewController, ActionSheetPresentable {
     @IBAction func tapClose(_ sender: Any) {
         self.showAlert(
             title: "Stop AI",
-            message: "Do you want to stop Sully Voice Assistance?",
+            message: "Do you want to stop Voice Assistance?",
             buttons: ["No", "Yes"]
         ) { [weak self] index in
             if index == 1 {

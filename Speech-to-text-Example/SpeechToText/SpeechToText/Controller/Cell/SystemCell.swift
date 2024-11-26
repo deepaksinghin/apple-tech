@@ -1,6 +1,5 @@
 //
 //  SystemCell.swift
-//  Sully.ai
 //
 //  Created by Deepak Singh on 21/11/24.
 //
